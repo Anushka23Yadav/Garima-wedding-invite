@@ -11,7 +11,7 @@ export default function BlessingSection() {
   const { couple, assets } = weddingConfig;
 
   return (
-    <section className="relative py-20 px-6 text-center space-y-12 overflow-hidden">
+    <section className="relative pt-4 md:pt-6 pb-16 px-6 text-center space-y-10 md:space-y-12 overflow-hidden">
       {/* Background Mandalas */}
       <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 opacity-5">
         <MandalaIcon className="w-80 h-80 animate-spin-slow" />
@@ -90,7 +90,7 @@ export default function BlessingSection() {
           className="space-y-4 max-w-2xl mx-auto px-4"
         >
           <p className="font-heading text-base md:text-xl text-forest/75 italic leading-relaxed">
-            {couple.invitationOpening || "With the divine blessings of our elders and the love of our family,"}
+            {couple.invitationOpening || "With the divine blessings and the love of our family,"}
           </p>
           <div className="space-y-2 pt-1">
             <h2 className="font-heading text-2xl md:text-4xl font-bold text-gold tracking-wider uppercase">
@@ -108,7 +108,7 @@ export default function BlessingSection() {
           whileInView={{ scale: 1, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="relative w-36 h-36 md:w-48 md:h-48 mx-auto my-2 md:my-4 drop-shadow-md"
+          className="relative w-36 h-36 md:w-48 md:h-48 mx-auto mb-2 drop-shadow-md"
         >
           <Image
             src="/assets/anurima-logo.png"
@@ -119,110 +119,112 @@ export default function BlessingSection() {
           />
         </motion.div>
 
-        {/* Bride & Groom Section */}
-        <div className="space-y-8 max-w-3xl mx-auto w-full pt-2">
-          {/* Garima Card */}
+        {/* Couple Names */}
+        <div className="pt-2 md:pt-4">
           <motion.div
-            initial={{ scale: 0.95, opacity: 0 }}
+            initial={{ scale: 0.9, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.9, delay: 0.2 }}
-            className="space-y-4 pt-2 md:pt-4"
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-4 md:gap-6"
           >
-            <h1 className="font-alex text-7xl md:text-9xl text-gold drop-shadow-sm leading-tight md:leading-normal">
+            <h1 className="font-alex text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-gold drop-shadow-sm">
               {couple.bride.name}
             </h1>
+            <span className="font-heading text-lg sm:text-xl md:text-2xl text-forest/75 italic font-medium tracking-widest my-1 sm:my-0">
+              — weds —
+            </span>
+            <h1 className="font-alex text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-gold drop-shadow-sm">
+              {couple.groom.name}
+            </h1>
+          </motion.div>
+        </div>
 
-            <div className="bg-white/60 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-gold/20 shadow-lg space-y-4 max-w-xl mx-auto">
-              <div className="space-y-1">
-                <p className="font-heading text-xs uppercase tracking-[0.25em] text-gold font-bold">
-                  Beloved Daughter of
-                </p>
-                <p className="font-heading text-lg md:text-2xl font-bold text-forest">
-                  {couple.bride.parents}
-                </p>
-              </div>
+        {/* Family Lineage Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto w-full pt-4">
+          {/* Bride Side - Garima */}
+          <motion.div
+            initial={{ x: -30, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="bg-white/60 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-gold/20 shadow-md space-y-4"
+          >
+            <p className="font-alex text-5xl md:text-6xl text-forest">{couple.bride.name}</p>
+            <div className="h-[1px] w-16 bg-gold/30 mx-auto" />
 
-              <div className="h-[1px] w-20 bg-gold/25 mx-auto" />
+            <div className="space-y-1">
+              <p className="font-heading text-xs uppercase tracking-[0.2em] text-gold font-bold">
+                Beloved Daughter of
+              </p>
+              <p className="font-heading font-bold text-xl uppercase tracking-tighter text-forest">
+                {couple.bride.parents}
+              </p>
+            </div>
 
-              <div className="space-y-1">
-                <p className="font-heading text-xs uppercase tracking-[0.25em] text-gold font-bold">
-                  Granddaughter of
-                </p>
-                <p className="font-heading text-base md:text-xl font-semibold text-forest/90">
-                  {couple.bride.grandparents}
-                </p>
-              </div>
+            <div className="h-[1px] w-12 bg-gold/20 mx-auto" />
 
-              <div className="h-[1px] w-20 bg-gold/25 mx-auto" />
+            <div className="space-y-1">
+              <p className="font-heading text-xs uppercase tracking-[0.2em] text-gold font-bold">
+                Granddaughter of
+              </p>
+              <p className="font-heading font-semibold text-base md:text-lg text-forest/90">
+                {couple.bride.grandparents}
+              </p>
+            </div>
 
-              <div className="space-y-1">
-                <p className="font-heading text-xs uppercase tracking-[0.25em] text-gold font-bold">
-                  Maternal Granddaughter of
-                </p>
-                <p className="font-heading text-base md:text-xl font-semibold text-forest/90">
-                  {couple.bride.maternalGrandparents}
-                </p>
-              </div>
+            <div className="h-[1px] w-12 bg-gold/20 mx-auto" />
 
-              <div className="h-[1px] w-20 bg-gold/25 mx-auto" />
+            <div className="space-y-1">
+              <p className="font-heading text-xs uppercase tracking-[0.2em] text-gold font-bold">
+                Maternal Granddaughter of
+              </p>
+              <p className="font-heading font-semibold text-base md:text-lg text-forest/90">
+                {couple.bride.maternalGrandparents}
+              </p>
+            </div>
 
-              <div className="space-y-1">
-                <p className="font-heading text-xs uppercase tracking-[0.25em] text-gold font-bold">
-                  Beloved Sister of
-                </p>
-                <p className="font-heading text-base md:text-xl font-semibold text-forest/90">
-                  {couple.bride.sibling}
-                </p>
-              </div>
+            <div className="h-[1px] w-12 bg-gold/20 mx-auto" />
+
+            <div className="space-y-1">
+              <p className="font-heading text-xs uppercase tracking-[0.2em] text-gold font-bold">
+                Beloved Sister of
+              </p>
+              <p className="font-heading font-semibold text-base md:text-lg text-forest/90">
+                {couple.bride.sibling}
+              </p>
             </div>
           </motion.div>
 
-          {/* With Connector */}
+          {/* Groom Side - Anurag */}
           <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
+            initial={{ x: 30, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex items-center justify-center gap-4 max-w-xs mx-auto py-2"
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="bg-white/60 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-gold/20 shadow-md space-y-4 flex flex-col justify-center"
           >
-            <div className="h-[1px] flex-1 bg-gold/30" />
-            <span className="font-alex text-4xl md:text-5xl text-gold px-3">With</span>
-            <div className="h-[1px] flex-1 bg-gold/30" />
-          </motion.div>
+            <p className="font-alex text-5xl md:text-6xl text-forest">{couple.groom.name}</p>
+            <div className="h-[1px] w-16 bg-gold/30 mx-auto" />
 
-          {/* Anurag Card */}
-          <motion.div
-            initial={{ scale: 0.95, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.9, delay: 0.4 }}
-            className="space-y-4 pt-2 md:pt-4"
-          >
-            <h2 className="font-alex text-7xl md:text-9xl text-forest drop-shadow-sm leading-tight md:leading-normal">
-              {couple.groom.name}
-            </h2>
+            <div className="space-y-1">
+              <p className="font-heading text-xs uppercase tracking-[0.2em] text-gold font-bold">
+                Grandson of
+              </p>
+              <p className="font-heading font-semibold text-lg md:text-xl text-forest/90">
+                {couple.groom.grandparents}
+              </p>
+            </div>
 
-            <div className="bg-white/60 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-gold/20 shadow-lg space-y-4 max-w-xl mx-auto">
-              <div className="space-y-1">
-                <p className="font-heading text-xs uppercase tracking-[0.25em] text-gold font-bold">
-                  Grandson of
-                </p>
-                <p className="font-heading text-base md:text-xl font-semibold text-forest/90">
-                  {couple.groom.grandparents}
-                </p>
-              </div>
+            <div className="h-[1px] w-12 bg-gold/20 mx-auto" />
 
-              <div className="h-[1px] w-20 bg-gold/25 mx-auto" />
-
-              <div className="space-y-1">
-                <p className="font-heading text-xs uppercase tracking-[0.25em] text-gold font-bold">
-                  Son of
-                </p>
-                <p className="font-heading text-lg md:text-2xl font-bold text-forest">
-                  {couple.groom.parents}
-                </p>
-              </div>
+            <div className="space-y-1">
+              <p className="font-heading text-xs uppercase tracking-[0.2em] text-gold font-bold">
+                Son of
+              </p>
+              <p className="font-heading font-bold text-xl uppercase tracking-tighter text-forest">
+                {couple.groom.parents}
+              </p>
             </div>
           </motion.div>
         </div>

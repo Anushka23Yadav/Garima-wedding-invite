@@ -118,7 +118,7 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2 }}
-          className="relative pt-12 md:pt-20"
+          className="relative pt-4 md:pt-6"
         >
           {/* Floating Petals throughout */}
           <FloatingPetals />

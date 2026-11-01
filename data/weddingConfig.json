@@ -1,6 +1,6 @@
 {
   "couple": {
-    "invitationOpening": "With the divine blessings of our elders and the love of our family,",
+    "invitationOpening": "With the divine blessings and the love of our family,",
     "invitingFamily": "The Khanka Family",
     "invitationCall": "cordially invites you to grace the auspicious occasion of the wedding of",
     "bride": {
@@ -12,10 +12,10 @@
     },
     "groom": {
       "name": "Anurag",
-      "grandparents": "Sw. Rajkishor Sharma & Sw. Imarti Sharma",
+      "grandparents": "Sw. Rajkishor Sharma & Imarti Sharma",
       "parents": "Mr. Satyaveer Sharma & Mrs. Anita Sharma"
     },
-    "coupleTitle": "Garima & Anurag",
+    "coupleTitle": "Garima weds Anurag",
     "blessingHeadline": "॥ श्री गणेशाय नमः ॥",
     "shloka": "धर्मेच अर्थेच कामेच नाति चरामि",
     "shlokaTranslation": "In Dharma, Wealth, and Love — I shall not forsake you",
@@ -50,6 +50,25 @@
     "ogImage": "/assets/og-image.jpg"
   },
   "ceremonies": {
+    "ganeshPuja": {
+      "title": "Auspicious Beginning",
+      "heading": "Shri Ganesh Puja",
+      "dateText": "21st November 2026 — Saturday",
+      "events": [
+        {
+          "id": "ganesh-puja",
+          "title": "Shri Ganesh Puja",
+          "date": "21st November 2026",
+          "time": "12:00 PM Onwards",
+          "note": "Seeking Lord Ganesha's divine blessings to mark the auspicious beginning of our wedding festivities 🙏✨",
+          "venue": "At Residence, Kalyanpur, Lucknow",
+          "image": "/assets/ganesh.jpg",
+          "bgGradient": "bg-gradient-to-br from-[#FFF8E7] via-[#FFE8CC] to-[#FFD8A8]",
+          "accentColor": "bg-amber-600",
+          "icon": "Sparkles"
+        }
+      ]
+    },
     "day1": {
       "title": "Pre-Wedding Celebrations",
       "dateText": "25th November 2026 — Wednesday",

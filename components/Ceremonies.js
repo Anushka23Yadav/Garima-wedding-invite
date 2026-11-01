@@ -132,11 +132,53 @@ const iconMap = {
 };
 
 export default function Ceremonies() {
-  const { day1, weddingDay } = weddingConfig.ceremonies;
+  const { ganeshPuja, day1, weddingDay } = weddingConfig.ceremonies;
   const weddingSchedule = weddingDay.schedule;
 
   return (
     <section className="py-20 px-4 md:px-6 max-w-6xl mx-auto space-y-24">
+      {/* Ganesh Puja - 21st November */}
+      {ganeshPuja && (
+        <div className="space-y-12">
+          <div className="text-center space-y-4">
+            <FloralDivider />
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              className="space-y-3"
+            >
+              <div className="inline-block bg-gold/10 px-6 py-2 rounded-full border border-gold/20">
+                <p className="font-heading text-sm uppercase tracking-[0.3em] text-gold font-bold">
+                  {ganeshPuja.title || "Auspicious Beginning"}
+                </p>
+              </div>
+              <h2 className="font-script text-5xl md:text-6xl text-gold pt-2">
+                {ganeshPuja.heading || "Shri Ganesh Puja"}
+              </h2>
+              <p className="font-heading text-xl opacity-60 italic">{ganeshPuja.dateText}</p>
+            </motion.div>
+          </div>
+
+          <div className="max-w-xl mx-auto">
+            {ganeshPuja.events.map((event) => (
+              <EventCard 
+                key={event.id}
+                title={event.title}
+                date={event.date}
+                time={event.time}
+                note={event.note}
+                venue={event.venue}
+                bgGradient={event.bgGradient}
+                image={event.image}
+                icon={iconMap[event.icon] || Sparkles}
+                accentColor={event.accentColor}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Day 1 Heading */}
       <div className="text-center space-y-4">
         <FloralDivider />
@@ -241,7 +283,7 @@ export default function Ceremonies() {
               >
                 शुभ विवाह
               </motion.h3>
-              <p className="font-heading text-2xl md:text-3xl tracking-[0.2em] font-light">Garima & Anurag</p>
+              <p className="font-heading text-2xl md:text-3xl tracking-[0.2em] font-light">Garima weds Anurag</p>
               <div className="flex items-center justify-center gap-3">
                 <div className="w-12 h-[1px] bg-gold/60" />
                 <Heart size={16} className="text-gold" fill="currentColor" />

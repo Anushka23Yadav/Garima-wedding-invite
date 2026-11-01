@@ -98,7 +98,7 @@ export default function VenueSection() {
 
           <div className="pt-4 border-t border-gold/10">
             <p className="font-heading text-sm text-forest/50 italic">
-              All ceremonies — Haldi, Mehndi, Sangeet & Wedding — will be held at this venue
+              Delhi celebrations — Haldi, Mehndi, Sangeet & Wedding — will be held at this venue
             </p>
           </div>
         </motion.div>
