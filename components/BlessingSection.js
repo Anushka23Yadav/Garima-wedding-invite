@@ -131,9 +131,22 @@ export default function BlessingSection() {
             <h1 className="font-alex text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-gold drop-shadow-sm">
               {couple.bride.name}
             </h1>
-            <span className="font-heading text-lg sm:text-xl md:text-2xl text-forest/75 italic font-medium tracking-widest my-1 sm:my-0">
-              — weds —
-            </span>
+            <div className="flex flex-col items-center justify-center gap-1.5 my-2 sm:my-0">
+              <div className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full overflow-hidden border border-gold/40 shadow-md p-0.5 bg-white/70 backdrop-blur-sm">
+                <div className="relative w-full h-full rounded-full overflow-hidden">
+                  <Image
+                    src="/assets/hands-uniting.gif"
+                    alt="Hastamelap"
+                    fill
+                    className="object-cover"
+                    unoptimized
+                  />
+                </div>
+              </div>
+              <span className="font-heading text-base sm:text-lg md:text-xl text-forest/75 italic font-medium tracking-widest">
+                — weds —
+              </span>
+            </div>
             <h1 className="font-alex text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-gold drop-shadow-sm">
               {couple.groom.name}
             </h1>

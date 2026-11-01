@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { LotusIcon, FloralDivider, MandalaIcon } from './Icons';
+import NamasteLogo from './NamasteLogo';
 import { Heart, Sparkles } from 'lucide-react';
 import weddingConfig from '../data/weddingConfig.json';
 
@@ -99,6 +100,9 @@ export default function ClosingSection() {
           <h3 className="font-alex text-5xl md:text-6xl text-forest">
             {couple.bride.name} and {couple.groom.name}
           </h3>
+
+          {/* Animated Folding Hand Logo (Namaskar / Pranam Mudra) */}
+          <NamasteLogo />
           {/* <p className="font-heading text-lg text-forest/50 italic">{dates.weddingDateText}</p> */}
         </motion.div>
 
