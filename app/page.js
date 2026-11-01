@@ -62,26 +62,37 @@ export default function Home() {
   const audioRef = useRef(null);
 
   useEffect(() => {
-    // Initialize Howl for background music
-    audioRef.current = new Howl({
+    // Initialize Howl for background music with strict single-instance management
+    const sound = new Howl({
       src: [weddingConfig.assets.audioSong],
       loop: true,
       volume: 0.5,
       html5: true,
+      onplay: () => setIsPlaying(true),
+      onpause: () => setIsPlaying(false),
+      onstop: () => setIsPlaying(false),
     });
 
+    audioRef.current = sound;
+
     return () => {
-      if (audioRef.current) {
-        audioRef.current.unload();
-      }
+      sound.stop();
+      sound.unload();
+      audioRef.current = null;
     };
   }, []);
 
   const handleStartOpen = () => {
-    setIsPlaying(true);
     if (audioRef.current) {
       try {
+        // Prevent overlapping dual playback if already playing
+        if (audioRef.current.playing()) {
+          setIsPlaying(true);
+          return;
+        }
+        audioRef.current.stop();
         audioRef.current.play();
+        setIsPlaying(true);
       } catch (err) {
         console.warn("Audio autoplay blocked by mobile browser:", err);
       }
@@ -93,16 +104,18 @@ export default function Home() {
   };
 
   const toggleMusic = () => {
-    if (isPlaying) {
+    if (!audioRef.current) return;
+    if (audioRef.current.playing()) {
       audioRef.current.pause();
+      setIsPlaying(false);
     } else {
       try {
         audioRef.current.play();
+        setIsPlaying(true);
       } catch (err) {
         console.warn("Music play error:", err);
       }
     }
-    setIsPlaying(!isPlaying);
   };
 
   return (

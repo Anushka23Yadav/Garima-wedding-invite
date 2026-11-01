@@ -8,13 +8,18 @@ export default function Envelope({ onOpen, onStartOpen }) {
   const [isOpen, setIsOpen] = useState(false);
   const [showSunburst, setShowSunburst] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const hasTriggeredRef = React.useRef(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
   const handleOpen = (e) => {
-    if (isOpen) return;
+    if (e) {
+      e.stopPropagation?.();
+    }
+    if (hasTriggeredRef.current || isOpen) return;
+    hasTriggeredRef.current = true;
 
     // Immediately trigger sound playback synchronously on user gesture
     if (onStartOpen) {
