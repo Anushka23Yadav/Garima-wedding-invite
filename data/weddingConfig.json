@@ -1,8 +1,14 @@
 {
   "couple": {
+    "invitationOpening": "With the divine blessings of our elders and the love of our family,",
+    "invitingFamily": "The Khanka Family",
+    "invitationCall": "cordially invites you to grace the auspicious occasion of the wedding of",
     "bride": {
       "name": "Garima",
-      "parents": "Mr. Pawan Khanka & Mrs. Arti Khanka"
+      "parents": "Sw. Pawan Singh Khanka & Arti Khanka",
+      "grandparents": "Sw. Gambhir Singh Khanka & Sw. Hema Khanka",
+      "maternalGrandparents": "Trilok Singh Kanyal & Vidya Kanyal",
+      "sibling": "Priyansh Singh Khanka"
     },
     "groom": {
       "name": "Anurag",
