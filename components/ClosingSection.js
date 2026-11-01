@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { LotusIcon, FloralDivider, MandalaIcon } from './Icons';
 import { Heart, Sparkles } from 'lucide-react';
@@ -79,6 +80,16 @@ export default function ClosingSection() {
           transition={{ delay: 0.5 }}
           className="space-y-4 pt-8 md:pt-12"
         >
+          {/* Couple Floral Crest */}
+          <div className="relative w-36 h-36 md:w-48 md:h-48 mx-auto -mb-2 drop-shadow-md">
+            <Image
+              src="/assets/anurima-logo.png"
+              alt="Anurima Crest"
+              fill
+              className="object-contain"
+            />
+          </div>
+
           <div className="flex items-center justify-center gap-3">
             <div className="w-16 h-[1px] bg-gold/30" />
             <Heart size={14} className="text-gold" fill="currentColor" />

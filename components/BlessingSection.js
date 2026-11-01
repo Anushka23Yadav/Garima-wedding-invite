@@ -102,17 +102,34 @@ export default function BlessingSection() {
           </div>
         </motion.div>
 
+        {/* Couple Monogram Crest */}
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="relative w-36 h-36 md:w-48 md:h-48 mx-auto my-2 md:my-4 drop-shadow-md"
+        >
+          <Image
+            src="/assets/anurima-logo.png"
+            alt="Anurima Monogram"
+            fill
+            className="object-contain"
+            priority
+          />
+        </motion.div>
+
         {/* Bride & Groom Section */}
-        <div className="space-y-8 max-w-3xl mx-auto w-full pt-4">
+        <div className="space-y-8 max-w-3xl mx-auto w-full pt-2">
           {/* Garima Card */}
           <motion.div
             initial={{ scale: 0.95, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, delay: 0.2 }}
-            className="space-y-4"
+            className="space-y-4 pt-2 md:pt-4"
           >
-            <h1 className="font-alex text-7xl md:text-9xl text-gold drop-shadow-sm">
+            <h1 className="font-alex text-7xl md:text-9xl text-gold drop-shadow-sm leading-tight md:leading-normal">
               {couple.bride.name}
             </h1>
 
@@ -180,19 +197,32 @@ export default function BlessingSection() {
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, delay: 0.4 }}
-            className="space-y-4"
+            className="space-y-4 pt-2 md:pt-4"
           >
-            <h2 className="font-alex text-7xl md:text-9xl text-forest drop-shadow-sm">
+            <h2 className="font-alex text-7xl md:text-9xl text-forest drop-shadow-sm leading-tight md:leading-normal">
               {couple.groom.name}
             </h2>
 
-            <div className="bg-white/60 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-gold/20 shadow-lg space-y-2 max-w-xl mx-auto">
-              <p className="font-heading text-xs uppercase tracking-[0.25em] text-gold font-bold">
-                Son of
-              </p>
-              <p className="font-heading text-lg md:text-2xl font-bold text-forest">
-                {couple.groom.parents}
-              </p>
+            <div className="bg-white/60 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-gold/20 shadow-lg space-y-4 max-w-xl mx-auto">
+              <div className="space-y-1">
+                <p className="font-heading text-xs uppercase tracking-[0.25em] text-gold font-bold">
+                  Grandson of
+                </p>
+                <p className="font-heading text-base md:text-xl font-semibold text-forest/90">
+                  {couple.groom.grandparents}
+                </p>
+              </div>
+
+              <div className="h-[1px] w-20 bg-gold/25 mx-auto" />
+
+              <div className="space-y-1">
+                <p className="font-heading text-xs uppercase tracking-[0.25em] text-gold font-bold">
+                  Son of
+                </p>
+                <p className="font-heading text-lg md:text-2xl font-bold text-forest">
+                  {couple.groom.parents}
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>
