@@ -178,7 +178,7 @@ export default function Envelope({ onOpen, onStartOpen }) {
         <div className="absolute inset-0 bg-white shadow-2xl border-2 border-gold/20 rounded-lg">
           {/* Internal Content (Wedding Card Preview) */}
           <div className="absolute inset-4 bg-beige/50 border border-gold/10 rounded flex items-center justify-center">
-             <div className="text-forest/30 font-script text-4xl">To New Beginnings</div>
+             <div className="text-forest/35 font-alex text-4xl sm:text-5xl select-none">To New Beginnings</div>
           </div>
         </div>
 
@@ -223,8 +223,12 @@ export default function Envelope({ onOpen, onStartOpen }) {
           </AnimatePresence>
         </div>
 
-        <div className="text-center mt-8 absolute -bottom-16 w-full pointer-events-none">
-          <p className="font-script text-2xl text-forest italic">To New Beginnings</p>
+        <div className="text-center mt-6 sm:mt-8 absolute -bottom-16 md:-bottom-20 w-full pointer-events-none flex items-center justify-center gap-2.5">
+          <span className="text-gold text-xs sm:text-sm opacity-60 select-none">✦</span>
+          <p className="font-alex text-3xl sm:text-4xl md:text-5xl text-forest tracking-wide drop-shadow-xs">
+            To New Beginnings
+          </p>
+          <span className="text-gold text-xs sm:text-sm opacity-60 select-none">✦</span>
         </div>
       </motion.div>
 
