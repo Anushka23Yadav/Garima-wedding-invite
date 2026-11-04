@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { LotusIcon, FloralDivider, MandalaIcon } from './Icons';
+import { BackgroundAnimalsPair } from './TraditionalBackgroundAnimation';
 import NamasteLogo from './NamasteLogo';
 import { Heart, Sparkles } from 'lucide-react';
 import weddingConfig from '../data/weddingConfig.json';
@@ -13,6 +14,8 @@ export default function ClosingSection() {
 
   return (
     <section className="py-24 md:py-32 px-6 bg-beige border-t-4 border-gold/10 overflow-hidden relative">
+      {/* Background Traditional Animals Watermark */}
+      <BackgroundAnimalsPair camelTop="top-[25%]" elephantTop="bottom-[20%]" />
       {/* Decorative Rotating Mandala Background */}
       <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 opacity-[0.03] pointer-events-none">
         <motion.div

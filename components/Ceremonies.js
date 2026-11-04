@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FloralDivider } from './Icons';
+import { ScheduleAnimals } from './TraditionalBackgroundAnimation';
 import { Clock, MapPin, Sparkles, Music, Heart } from 'lucide-react';
 import weddingConfig from '../data/weddingConfig.json';
 
@@ -136,7 +137,7 @@ export default function Ceremonies() {
   const weddingSchedule = weddingDay.schedule;
 
   return (
-    <section className="py-20 px-4 md:px-6 max-w-6xl mx-auto space-y-24">
+    <section className="py-20 px-4 md:px-6 max-w-6xl mx-auto space-y-24 relative overflow-hidden">
       {/* Ganesh Puja - 21st November */}
       {ganeshPuja && (
         <div className="space-y-12">
@@ -301,30 +302,35 @@ export default function Ceremonies() {
         </motion.div>
 
         {/* Wedding Day Schedule */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="max-w-lg mx-auto"
-        >
-          <div className="text-center mb-10">
-            <h3 className="font-script text-4xl text-gold">Wedding Day Schedule</h3>
-            <div className="inline-block mt-2">
-              <span className="font-heading text-sm font-bold text-forest bg-gold/25 px-4 py-1.5 rounded-full border border-gold/50 tracking-widest uppercase shadow-sm">
-                26th November 2026
-              </span>
-            </div>
-          </div>
+        <div className="relative">
+          {/* Schedule Animals: Camel on left, Elephant shifted slightly below on right */}
+          <ScheduleAnimals />
 
-          <div className="relative">
-            {/* Background line */}
-            <div className="absolute left-[7px] top-2 bottom-8 w-[2px] bg-gold/15" />
-            
-            {weddingSchedule.map((item, index) => (
-              <ScheduleItem key={index} {...item} index={index} isLast={index === weddingSchedule.length - 1} />
-            ))}
-          </div>
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="max-w-lg mx-auto"
+          >
+            <div className="text-center mb-10">
+              <h3 className="font-script text-4xl text-gold">Wedding Day Schedule</h3>
+              <div className="inline-block mt-2">
+                <span className="font-heading text-sm font-bold text-forest bg-gold/25 px-4 py-1.5 rounded-full border border-gold/50 tracking-widest uppercase shadow-sm">
+                  26th November 2026
+                </span>
+              </div>
+            </div>
+
+            <div className="relative">
+              {/* Background line */}
+              <div className="absolute left-[7px] top-2 bottom-8 w-[2px] bg-gold/15" />
+              
+              {weddingSchedule.map((item, index) => (
+                <ScheduleItem key={index} {...item} index={index} isLast={index === weddingSchedule.length - 1} />
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -3,6 +3,7 @@
 import React from 'react';
 import { MapPin, Navigation, Train } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { BackgroundAnimalsPair } from './TraditionalBackgroundAnimation';
 import weddingConfig from '../data/weddingConfig.json';
 
 export default function VenueSection() {
@@ -10,6 +11,8 @@ export default function VenueSection() {
 
   return (
     <section className="py-20 px-6 bg-cream/50 relative overflow-hidden">
+      {/* Background Traditional Animals Watermark (Desktop side margins only, never behind map on mobile) */}
+      <BackgroundAnimalsPair camelTop="top-[25%]" elephantTop="bottom-[18%]" className="hidden md:block" />
       {/* Decorative background elements */}
       <div className="absolute top-0 left-0 w-40 h-40 bg-gold/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-60 h-60 bg-gold/5 rounded-full translate-x-1/3 translate-y-1/3" />

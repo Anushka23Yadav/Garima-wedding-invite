@@ -15,6 +15,7 @@ import Ceremonies from '../components/Ceremonies';
 import OurStory from '../components/OurStory';
 import VenueSection from '../components/VenueSection';
 import ClosingSection from '../components/ClosingSection';
+import FloralBailBorder from '../components/FloralBailBorder';
 import { FloralDivider } from '../components/Icons';
 
 // Floating Petals Component
@@ -133,6 +134,9 @@ export default function Home() {
           transition={{ duration: 1.2 }}
           className="relative pt-4 md:pt-6"
         >
+          {/* Royal Floral Bail Border Frame */}
+          <FloralBailBorder />
+
           {/* Floating Petals throughout */}
           <FloatingPetals />
 

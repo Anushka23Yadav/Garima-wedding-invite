@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FloralDivider, MandalaIcon } from './Icons';
+import { BackgroundAnimalsPair } from './TraditionalBackgroundAnimation';
 
 import weddingConfig from '../data/weddingConfig.json';
 
@@ -12,6 +13,8 @@ export default function BlessingSection() {
 
   return (
     <section className="relative pt-4 md:pt-6 pb-16 px-6 text-center space-y-10 md:space-y-12 overflow-hidden">
+      {/* Background Traditional Animals (Parallel Pair: Left Camel facing in, Right Elephant facing in) */}
+      <BackgroundAnimalsPair camelTop="top-[48%]" elephantTop="top-[48%]" />
       {/* Background Mandalas */}
       <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 opacity-5">
         <MandalaIcon className="w-80 h-80 animate-spin-slow" />
