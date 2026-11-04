@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { WaxSeal } from './Icons';
 
@@ -57,6 +58,71 @@ export default function Envelope({ onOpen, onStartOpen }) {
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 opacity-5 pointer-events-none" 
            style={{ backgroundImage: 'radial-gradient(#2D5016 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+
+      {/* Royal Background Motifs: Inward-facing Camel (left) and Elephant (right) */}
+      {/* Left: Royal Rajasthani Camel (Facing Inwards to the Center via -scale-x-100) */}
+      <motion.div
+        initial={{ opacity: 0, x: -30 }}
+        animate={
+          isOpen 
+            ? { opacity: 0, scale: 0.8, x: -40 } 
+            : { opacity: 0.85, x: 0, y: [0, -8, 0] }
+        }
+        transition={
+          isOpen
+            ? { duration: 1.2, ease: "easeInOut" }
+            : {
+                opacity: { duration: 1 },
+                x: { duration: 1 },
+                y: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+              }
+        }
+        className="absolute pointer-events-none select-none z-10 
+                   bottom-3 left-3 w-20 h-20 
+                   sm:bottom-5 sm:left-6 sm:w-28 sm:h-28 
+                   md:bottom-auto md:top-1/2 md:-translate-y-1/2 md:left-6 lg:left-14 md:w-44 md:h-44 lg:w-56 lg:h-56"
+      >
+        <Image
+          src="/assets/royal_camel_transparent.png"
+          alt=""
+          fill
+          sizes="(max-width: 768px) 110px, 240px"
+          className="object-contain -scale-x-100 drop-shadow-sm"
+          priority
+        />
+      </motion.div>
+
+      {/* Right: Royal Auspicious Elephant (Facing Inwards to the Center) */}
+      <motion.div
+        initial={{ opacity: 0, x: 30 }}
+        animate={
+          isOpen 
+            ? { opacity: 0, scale: 0.8, x: 40 } 
+            : { opacity: 0.85, x: 0, y: [0, -8, 0] }
+        }
+        transition={
+          isOpen
+            ? { duration: 1.2, ease: "easeInOut" }
+            : {
+                opacity: { duration: 1 },
+                x: { duration: 1 },
+                y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }
+              }
+        }
+        className="absolute pointer-events-none select-none z-10 
+                   bottom-3 right-3 w-22 h-20 
+                   sm:bottom-5 sm:right-6 sm:w-30 sm:h-28 
+                   md:bottom-auto md:top-1/2 md:-translate-y-1/2 md:right-6 lg:right-14 md:w-48 md:h-44 lg:w-60 lg:h-56"
+      >
+        <Image
+          src="/assets/royal_elephant_transparent.png"
+          alt=""
+          fill
+          sizes="(max-width: 768px) 120px, 260px"
+          className="object-contain drop-shadow-sm"
+          priority
+        />
+      </motion.div>
 
       {/* Floating Sparkles in background (Only after mount to avoid hydration mismatch) */}
       {!isOpen && mounted && (

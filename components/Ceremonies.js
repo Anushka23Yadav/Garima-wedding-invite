@@ -138,7 +138,7 @@ export default function Ceremonies() {
 
   return (
     <section className="py-20 px-4 md:px-6 max-w-6xl mx-auto space-y-24 relative overflow-hidden">
-      {/* Ganesh Puja - 21st November */}
+      {/* Ganesh Puja - 20th November */}
       {ganeshPuja && (
         <div className="space-y-12">
           <div className="text-center space-y-4">
