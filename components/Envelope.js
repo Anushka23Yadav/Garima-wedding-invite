@@ -157,20 +157,29 @@ export default function Envelope({ onOpen, onStartOpen }) {
         animate={isOpen ? { y: 200, opacity: 0, scale: 0.8 } : {}}
         transition={{ duration: 1.5, ease: "easeInOut" }}
       >
-        <div className="text-center mb-8 absolute -top-24 w-full cursor-pointer z-40">
-          <motion.p 
-            className="font-script text-3xl md:text-4xl text-gold mb-2 drop-shadow-sm font-bold"
-            animate={{ opacity: [0.6, 1, 0.6], scale: [0.98, 1.02, 0.98] }}
-            transition={{ duration: 1.8, repeat: Infinity }}
+        <div className="text-center mb-6 absolute -top-28 sm:-top-32 w-full cursor-pointer z-40 flex flex-col items-center">
+          <motion.div 
+            className="inline-flex flex-col items-center gap-1.5 px-6 py-2.5 sm:px-8 sm:py-3 rounded-full bg-white/95 backdrop-blur-md border-2 border-[#8C651A]/40 shadow-xl shadow-gold/25"
+            animate={{ y: [0, -6, 0], scale: [1, 1.03, 1] }}
+            transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
           >
-            Tap to Reveal
-          </motion.p>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="text-gold text-2xl font-bold"
-          >
-            ↓
+            <div className="flex items-center gap-2">
+              <span className="text-[#8C651A] text-xs select-none">✦</span>
+              <p className="font-alex text-4xl sm:text-5xl text-forest font-bold tracking-wide drop-shadow-xs">
+                Tap to Reveal
+              </p>
+              <span className="text-[#8C651A] text-xs select-none">✦</span>
+            </div>
+            <div className="flex items-center gap-1 text-[#8C651A] text-xs uppercase tracking-[0.25em] font-extrabold font-heading">
+              <span>Touch the Wax Seal</span>
+              <motion.span
+                animate={{ y: [0, 3, 0] }}
+                transition={{ duration: 1.2, repeat: Infinity }}
+                className="text-sm font-bold"
+              >
+                ↓
+              </motion.span>
+            </div>
           </motion.div>
         </div>
 
@@ -178,7 +187,7 @@ export default function Envelope({ onOpen, onStartOpen }) {
         <div className="absolute inset-0 bg-white shadow-2xl border-2 border-gold/20 rounded-lg">
           {/* Internal Content (Wedding Card Preview) */}
           <div className="absolute inset-4 bg-beige/50 border border-gold/10 rounded flex items-center justify-center">
-             <div className="text-forest/35 font-alex text-4xl sm:text-5xl select-none">To New Beginnings</div>
+             <div className="text-forest/75 font-alex text-4xl sm:text-5xl font-bold select-none">To New Beginnings</div>
           </div>
         </div>
 
@@ -223,12 +232,12 @@ export default function Envelope({ onOpen, onStartOpen }) {
           </AnimatePresence>
         </div>
 
-        <div className="text-center mt-6 sm:mt-8 absolute -bottom-16 md:-bottom-20 w-full pointer-events-none flex items-center justify-center gap-2.5">
-          <span className="text-gold text-xs sm:text-sm opacity-60 select-none">✦</span>
-          <p className="font-alex text-3xl sm:text-4xl md:text-5xl text-forest tracking-wide drop-shadow-xs">
+        <div className="text-center mt-6 sm:mt-8 absolute -bottom-20 md:-bottom-24 w-full pointer-events-none flex items-center justify-center gap-3">
+          <span className="text-[#8C651A] text-sm sm:text-base select-none">✦</span>
+          <p className="font-alex text-4xl sm:text-5xl md:text-6xl text-forest font-bold tracking-wide drop-shadow-xs">
             To New Beginnings
           </p>
-          <span className="text-gold text-xs sm:text-sm opacity-60 select-none">✦</span>
+          <span className="text-[#8C651A] text-sm sm:text-base select-none">✦</span>
         </div>
       </motion.div>
 

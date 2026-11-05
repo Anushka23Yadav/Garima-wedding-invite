@@ -24,11 +24,11 @@ export default function VenueSection() {
           viewport={{ once: true }}
           className="space-y-4"
         >
-          <div className="inline-block bg-gold/10 px-6 py-2 rounded-full border border-gold/20 mb-2">
-            <p className="font-heading text-sm uppercase tracking-[0.3em] text-gold font-bold">All Ceremonies at</p>
+          <div className="inline-block bg-gold/15 px-7 py-2.5 rounded-full border border-gold/30 mb-2">
+            <p className="font-heading text-base sm:text-lg uppercase tracking-[0.3em] text-[#8C651A] font-extrabold">All Ceremonies at</p>
           </div>
-          <h2 className="font-script text-5xl md:text-6xl text-gold">Find Us Here</h2>
-          <p className="font-heading text-xl opacity-60 italic">We'd love to have you with us</p>
+          <h2 className="font-script text-6xl md:text-7xl text-[#8C651A] font-bold">Find Us Here</h2>
+          <p className="font-heading text-2xl sm:text-3xl md:text-4xl text-forest font-bold italic">We'd love to have you with us</p>
         </motion.div>
 
         {/* Map Container */}
@@ -55,19 +55,19 @@ export default function VenueSection() {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="bg-white p-8 rounded-2xl shadow-xl border border-gold/10 space-y-6"
+          className="bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-gold/20 space-y-6"
         >
           <div className="flex flex-col items-center gap-4">
             <motion.div
               animate={{ y: [0, -5, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="bg-gold/10 p-4 rounded-full text-gold"
+              className="bg-gold/15 p-4 rounded-full text-[#8C651A]"
             >
-              <MapPin size={32} />
+              <MapPin size={34} />
             </motion.div>
             <div className="space-y-2">
-              <h3 className="font-heading text-2xl md:text-3xl font-bold text-forest">{venue.name}</h3>
-              <p className="font-heading text-lg text-forest/70 max-w-sm mx-auto">
+              <h3 className="font-heading text-3xl md:text-4xl font-extrabold text-forest">{venue.name}</h3>
+              <p className="font-heading text-xl md:text-2xl text-forest font-bold leading-relaxed max-w-md mx-auto">
                 {venue.addressLine1}<br />
                 {venue.addressLine2}
               </p>
@@ -75,14 +75,14 @@ export default function VenueSection() {
           </div>
 
           {/* Nearest Metro Station Info */}
-          <div className="inline-flex items-center justify-center gap-3.5 bg-amber-50/80 px-6 py-3.5 rounded-2xl border border-amber-200/70 text-forest shadow-sm max-w-md mx-auto">
-            <div className="w-9 h-9 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-700 font-bold shrink-0">
-              <Train size={20} />
+          <div className="inline-flex items-center justify-center gap-3.5 bg-amber-50 px-7 py-4 rounded-2xl border border-amber-300 text-forest shadow-sm max-w-lg mx-auto">
+            <div className="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-800 font-bold shrink-0">
+              <Train size={22} />
             </div>
             <div className="text-left">
-              <p className="font-heading text-xs uppercase tracking-wider font-bold text-amber-800">Nearest Metro Station</p>
-              <p className="font-heading text-sm md:text-base font-semibold text-forest">
-                {venue.nearestMetro.stationName} <span className="text-amber-800/80 font-normal">({venue.nearestMetro.distance}, {venue.nearestMetro.line})</span>
+              <p className="font-heading text-sm sm:text-base uppercase tracking-wider font-extrabold text-amber-900">Nearest Metro Station</p>
+              <p className="font-heading text-base sm:text-lg md:text-xl font-bold text-forest">
+                {venue.nearestMetro.stationName} <span className="text-amber-900 font-semibold">({venue.nearestMetro.distance}, {venue.nearestMetro.line})</span>
               </p>
             </div>
           </div>
@@ -92,15 +92,15 @@ export default function VenueSection() {
               href={venue.googleMapsUrl} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-8 py-3 bg-forest text-beige rounded-full font-heading font-bold hover:bg-gold hover:text-forest transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              className="flex items-center gap-2.5 px-8 py-3.5 bg-forest text-beige rounded-full font-heading font-bold text-base md:text-lg hover:bg-gold hover:text-forest transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
             >
-              <Navigation size={18} />
+              <Navigation size={20} />
               Get Directions
             </a>
           </div>
 
-          <div className="pt-4 border-t border-gold/10">
-            <p className="font-heading text-sm text-forest/50 italic">
+          <div className="pt-4 border-t border-gold/20">
+            <p className="font-heading text-base md:text-lg text-forest font-semibold italic">
               Delhi celebrations — Haldi, Mehndi, Sangeet & Wedding — will be held at this venue
             </p>
           </div>

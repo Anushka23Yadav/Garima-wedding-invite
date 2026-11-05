@@ -213,7 +213,7 @@ export default function ScratchCard({ revealContent, onReveal, isMonth, classNam
         >
           {revealContent}
         </span>
-        <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-wider sm:tracking-[0.2em] text-gold mt-1 select-none whitespace-nowrap">
+        <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-wider sm:tracking-[0.2em] text-[#8C651A] mt-1 select-none whitespace-nowrap">
           ✦ Revealed ✦
         </span>
       </div>
@@ -224,13 +224,17 @@ export default function ScratchCard({ revealContent, onReveal, isMonth, classNam
         className={`absolute inset-0 w-full h-full cursor-pointer touch-none transition-opacity duration-300 ${
           isRevealed ? 'opacity-0 pointer-events-none' : 'opacity-100'
         } z-10`}
-        onMouseDown={() => setIsDrawing(true)}
+        onMouseDown={() => {
+          setIsDrawing(true);
+          if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent('wedding-user-interacting'));
+        }}
         onMouseUp={() => setIsDrawing(false)}
         onMouseMove={draw}
         onMouseLeave={() => setIsDrawing(false)}
         onTouchStart={(e) => {
           e.preventDefault();
           setIsDrawing(true);
+          if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent('wedding-user-interacting'));
         }}
         onTouchEnd={() => setIsDrawing(false)}
         onTouchMove={(e) => {

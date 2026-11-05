@@ -3,10 +3,12 @@
 @theme {
   --color-beige: #FAF3E0;
   --color-gold: #C9A84C;
-  --color-forest: #2D5016;
+  --color-gold-dark: #8C651A;
+  --color-forest: #1A3810;
+  --color-forest-dark: #102409;
   --color-cream: #FFF8F0;
   --color-blush: #F9E4D4;
-  --color-saffron: #FF9933;
+  --color-saffron: #D96E00;
   --color-deep-red: #8B1A1A;
   --color-maroon: #800020;
   
@@ -17,7 +19,7 @@
 
 :root {
   --background: #FAF3E0;
-  --foreground: #2D5016;
+  --foreground: #1A3810;
 }
 
 body {
@@ -37,6 +39,12 @@ body {
 
 .font-heading {
   font-family: var(--font-cormorant);
+  font-weight: 500;
+  letter-spacing: 0.015em;
+}
+
+.text-gold-dark {
+  color: #8C651A;
 }
 
 .gold-gradient {

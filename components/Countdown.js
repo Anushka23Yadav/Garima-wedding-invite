@@ -60,7 +60,7 @@ export default function Countdown() {
             </span>
           </div>
         </div>
-        <span className="text-gold font-script text-lg sm:text-xl font-medium">{label}</span>
+        <span className="text-[#8C651A] font-script text-xl sm:text-2xl font-bold">{label}</span>
       </motion.div>
     );
   };
@@ -68,11 +68,11 @@ export default function Countdown() {
   return (
     <div className="flex items-center justify-center gap-2 sm:gap-4 md:gap-6 py-8 md:py-12">
       <TimerCard label="Days" value={timeLeft.days} index={0} />
-      <div className="flex items-center text-gold font-script text-2xl sm:text-3xl pb-7 sm:pb-8 font-bold select-none opacity-80">:</div>
+      <div className="flex items-center text-[#8C651A] font-script text-2xl sm:text-3xl pb-7 sm:pb-8 font-bold select-none">:</div>
       <TimerCard label="Hours" value={timeLeft.hours} index={1} />
-      <div className="flex items-center text-gold font-script text-2xl sm:text-3xl pb-7 sm:pb-8 font-bold select-none opacity-80">:</div>
+      <div className="flex items-center text-[#8C651A] font-script text-2xl sm:text-3xl pb-7 sm:pb-8 font-bold select-none">:</div>
       <TimerCard label="Minutes" value={timeLeft.minutes} index={2} />
-      <div className="flex items-center text-gold font-script text-2xl sm:text-3xl pb-7 sm:pb-8 font-bold select-none opacity-80">:</div>
+      <div className="flex items-center text-[#8C651A] font-script text-2xl sm:text-3xl pb-7 sm:pb-8 font-bold select-none">:</div>
       <TimerCard label="Seconds" value={timeLeft.seconds} index={3} />
     </div>
   );

@@ -47,13 +47,13 @@ export default function ClosingSection() {
         >
           <LotusIcon className="w-16 h-16 md:w-20 md:h-20 text-gold animate-pulse-soft" />
 
-          <h2 className="font-script text-4xl md:text-5xl lg:text-6xl text-forest leading-tight max-w-2xl">
+          <h2 className="font-script text-5xl md:text-6xl lg:text-7xl text-forest font-bold leading-tight max-w-3xl">
             "{couple.closingQuote}"
           </h2>
 
           <FloralDivider className="w-full max-w-md" />
 
-          <p className="font-heading text-xl md:text-2xl text-forest/70 max-w-xl italic">
+          <p className="font-heading text-2xl md:text-3xl text-forest font-bold max-w-2xl italic leading-relaxed">
             {couple.closingMessage}
           </p>
 
@@ -95,12 +95,12 @@ export default function ClosingSection() {
           </div>
 
           <div className="flex items-center justify-center gap-3">
-            <div className="w-16 h-[1px] bg-gold/30" />
-            <Heart size={14} className="text-gold" fill="currentColor" />
-            <div className="w-16 h-[1px] bg-gold/30" />
+            <div className="w-16 h-[1.5px] bg-gold/40" />
+            <Heart size={14} className="text-[#8C651A]" fill="currentColor" />
+            <div className="w-16 h-[1.5px] bg-gold/40" />
           </div>
-          <p className="font-heading text-sm uppercase tracking-[0.5em] text-gold font-bold">With Love & Blessings</p>
-          <h3 className="font-alex text-5xl md:text-6xl text-forest">
+          <p className="font-heading text-base md:text-lg uppercase tracking-[0.4em] text-[#8C651A] font-extrabold">With Love & Blessings</p>
+          <h3 className="font-alex text-6xl md:text-7xl text-forest font-bold drop-shadow-sm">
             {couple.bride.name} and {couple.groom.name}
           </h3>
 
@@ -109,7 +109,7 @@ export default function ClosingSection() {
           {/* <p className="font-heading text-lg text-forest/50 italic">{dates.weddingDateText}</p> */}
         </motion.div>
 
-        <div className="pt-16 md:pt-20 opacity-30 font-heading text-xs tracking-widest text-forest">
+        <div className="pt-16 md:pt-20 text-forest font-heading text-sm sm:text-base tracking-widest font-bold">
           <p>Handcrafted with ❤️ for {couple.bride.name} & {couple.groom.name} • 2026</p>
         </div>
       </div>

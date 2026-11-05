@@ -68,16 +68,16 @@ export default function BlessingSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="font-heading text-lg text-saffron tracking-widest uppercase"
+          className="font-heading text-xl sm:text-2xl md:text-3xl text-saffron font-extrabold tracking-[0.25em] uppercase"
         >
           {couple.blessingHeadline}
         </motion.p>
         
-        <div className="space-y-4">
-          <p className="text-2xl font-heading text-gold italic gold-gradient">
+        <div className="space-y-4 max-w-2xl mx-auto">
+          <p className="text-3xl sm:text-4xl md:text-5xl font-heading text-gold italic gold-gradient font-bold leading-tight">
             "{couple.shloka}"
           </p>
-          <p className="text-sm tracking-widest text-forest/60 uppercase">
+          <p className="font-heading text-base sm:text-lg md:text-xl tracking-[0.18em] text-forest font-bold uppercase leading-relaxed">
             {couple.shlokaTranslation}
           </p>
         </div>
@@ -90,16 +90,16 @@ export default function BlessingSection() {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9 }}
-          className="space-y-4 max-w-2xl mx-auto px-4"
+          className="space-y-4 max-w-3xl mx-auto px-4"
         >
-          <p className="font-heading text-base md:text-xl text-forest/75 italic leading-relaxed">
+          <p className="font-heading text-2xl sm:text-3xl md:text-4xl text-forest font-bold italic leading-relaxed">
             {couple.invitationOpening || "With the divine blessings and the love of our family,"}
           </p>
-          <div className="space-y-2 pt-1">
-            <h2 className="font-heading text-2xl md:text-4xl font-bold text-gold tracking-wider uppercase">
+          <div className="space-y-3 pt-2">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#8C651A] tracking-wider uppercase">
               {couple.invitingFamily || "The Khanka Family"}
             </h2>
-            <p className="font-heading text-xs md:text-sm text-forest/70 tracking-[0.25em] uppercase font-medium">
+            <p className="font-heading text-base sm:text-lg md:text-xl text-forest tracking-[0.18em] uppercase font-bold leading-relaxed max-w-2xl mx-auto">
               {couple.invitationCall || "cordially invites you to grace the auspicious occasion of the wedding of"}
             </p>
           </div>

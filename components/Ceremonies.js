@@ -56,7 +56,7 @@ const EventCard = ({ title, date, time, venue, note, color, bgGradient, image, i
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.3 }}
-        className="font-script text-4xl md:text-5xl text-forest"
+        className="font-script text-5xl md:text-6xl text-forest font-bold"
       >
         {title}
       </motion.h2>
@@ -64,10 +64,10 @@ const EventCard = ({ title, date, time, venue, note, color, bgGradient, image, i
       {/* Date & Time */}
       <div className="flex flex-col gap-2 font-heading text-lg">
         <div className="flex items-center justify-center gap-2">
-          <Clock size={18} className="text-gold" />
-          <p className="font-bold text-forest">{date}</p>
+          <Clock size={20} className="text-[#8C651A]" />
+          <p className="font-extrabold text-forest text-xl md:text-2xl">{date}</p>
         </div>
-        <p className="text-forest/70 text-xl font-semibold">{time}</p>
+        <p className="text-forest text-2xl md:text-3xl font-extrabold">{time}</p>
       </div>
 
       {/* Note instead of dress code */}
@@ -77,19 +77,19 @@ const EventCard = ({ title, date, time, venue, note, color, bgGradient, image, i
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
-          className="bg-white/60 backdrop-blur-sm rounded-xl px-5 py-3 border border-gold/15"
+          className="bg-white/70 backdrop-blur-sm rounded-xl px-6 py-3.5 border border-gold/25"
         >
-          <p className="text-forest/80 font-heading text-base italic">{note}</p>
+          <p className="text-forest font-heading text-lg md:text-xl font-bold italic">{note}</p>
         </motion.div>
       )}
 
       {/* Venue */}
-      <div className="mt-2 pt-4 border-t border-forest/10 w-full">
+      <div className="mt-2 pt-4 border-t border-forest/15 w-full">
         <div className="flex items-center justify-center gap-2 mb-1">
-          <MapPin size={16} className="text-gold" />
-          <p className="text-sm uppercase tracking-widest font-bold text-gold">Venue</p>
+          <MapPin size={18} className="text-[#8C651A]" />
+          <p className="text-base uppercase tracking-widest font-extrabold text-[#8C651A]">Venue</p>
         </div>
-        <p className="font-heading text-forest/80">{venue}</p>
+        <p className="font-heading text-forest font-bold text-lg md:text-xl">{venue}</p>
       </div>
     </div>
   </motion.div>
@@ -105,23 +105,23 @@ const ScheduleItem = ({ time, event, description, index, isLast }) => (
     className="relative flex items-start gap-4 md:gap-6"
   >
     {/* Timeline dot */}
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center self-stretch">
       <motion.div
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
         viewport={{ once: true }}
         transition={{ delay: index * 0.15 + 0.3, type: "spring" }}
-        className="w-4 h-4 rounded-full bg-gold border-2 border-white shadow-lg z-10"
+        className="w-4 h-4 rounded-full bg-gold border-2 border-white shadow-lg z-10 shrink-0"
       />
-      {!isLast && <div className="w-[2px] h-16 timeline-line" />}
+      {!isLast && <div className="w-[2px] flex-1 my-1 timeline-line min-h-[60px]" />}
     </div>
 
     {/* Content */}
     <div className="pb-8 -mt-1">
-      <p className="font-heading text-sm text-gold font-bold uppercase tracking-wider">{time}</p>
-      <h4 className="font-script text-2xl text-forest mt-1">{event}</h4>
+      <p className="font-heading text-base md:text-lg text-[#8C651A] font-extrabold uppercase tracking-wider">{time}</p>
+      <h4 className="font-script text-3xl md:text-4xl text-forest font-bold mt-1">{event}</h4>
       {description && (
-        <p className="text-forest/60 font-heading text-sm mt-1 max-w-xs">{description}</p>
+        <p className="text-forest font-heading text-xl md:text-2xl mt-1.5 max-w-md font-bold leading-snug">{description}</p>
       )}
     </div>
   </motion.div>
@@ -149,15 +149,15 @@ export default function Ceremonies() {
               viewport={{ once: true }}
               className="space-y-3"
             >
-              <div className="inline-block bg-gold/10 px-6 py-2 rounded-full border border-gold/20">
-                <p className="font-heading text-sm uppercase tracking-[0.3em] text-gold font-bold">
+              <div className="inline-block bg-gold/15 px-7 py-2.5 rounded-full border border-gold/30">
+                <p className="font-heading text-base sm:text-lg uppercase tracking-[0.3em] text-[#8C651A] font-extrabold">
                   {ganeshPuja.title || "Auspicious Beginning"}
                 </p>
               </div>
-              <h2 className="font-script text-5xl md:text-6xl text-gold pt-2">
+              <h2 className="font-script text-6xl md:text-7xl text-[#8C651A] font-bold pt-2">
                 {ganeshPuja.heading || "Shri Ganesh Puja"}
               </h2>
-              <p className="font-heading text-xl opacity-60 italic">{ganeshPuja.dateText}</p>
+              <p className="font-heading text-2xl sm:text-3xl md:text-4xl text-forest font-bold italic">{ganeshPuja.dateText}</p>
             </motion.div>
           </div>
 
@@ -189,11 +189,11 @@ export default function Ceremonies() {
           viewport={{ once: true }}
           className="space-y-3"
         >
-          <div className="inline-block bg-gold/10 px-6 py-2 rounded-full border border-gold/20">
-            <p className="font-heading text-sm uppercase tracking-[0.3em] text-gold font-bold">{day1.title}</p>
+          <div className="inline-block bg-gold/15 px-7 py-2.5 rounded-full border border-gold/30">
+            <p className="font-heading text-base sm:text-lg uppercase tracking-[0.3em] text-[#8C651A] font-extrabold">{day1.title}</p>
           </div>
-          <h2 className="font-script text-5xl md:text-6xl text-gold pt-2">Day 1</h2>
-          <p className="font-heading text-xl opacity-60 italic">{day1.dateText}</p>
+          <h2 className="font-script text-6xl md:text-7xl text-[#8C651A] font-bold pt-2">Day 1</h2>
+          <p className="font-heading text-2xl sm:text-3xl md:text-4xl text-forest font-bold italic">{day1.dateText}</p>
         </motion.div>
       </div>
 
@@ -224,10 +224,10 @@ export default function Ceremonies() {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <div className="inline-block bg-gold/10 px-6 py-2 rounded-full border border-gold/20">
-              <p className="font-heading text-sm uppercase tracking-[0.3em] text-gold font-bold">{weddingDay.title}</p>
+            <div className="inline-block bg-gold/15 px-7 py-2.5 rounded-full border border-gold/30">
+              <p className="font-heading text-base sm:text-lg uppercase tracking-[0.3em] text-[#8C651A] font-extrabold">{weddingDay.title}</p>
             </div>
-            <h2 className="font-script text-5xl md:text-6xl text-gold pt-2">The Wedding Day</h2>
+            <h2 className="font-script text-6xl md:text-7xl text-[#8C651A] font-bold pt-2">The Wedding Day</h2>
             
             {/* Highlighted Wedding Date Banner */}
             <div className="pt-2 flex justify-center">
@@ -236,13 +236,13 @@ export default function Ceremonies() {
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="inline-flex items-center gap-3 px-6 py-3 md:px-8 md:py-3.5 rounded-full bg-gradient-to-r from-[#FFF5DA] via-[#FFEBB0] to-[#FFF5DA] border-2 border-gold shadow-lg shadow-gold/25"
+                className="inline-flex items-center gap-3 px-7 py-3.5 md:px-10 md:py-4 rounded-full bg-gradient-to-r from-[#FFF5DA] via-[#FFEBB0] to-[#FFF5DA] border-2 border-gold shadow-lg shadow-gold/25"
               >
-                <Sparkles size={20} className="text-gold shrink-0 animate-pulse-soft" />
-                <span className="font-heading text-xl sm:text-2xl md:text-3xl font-extrabold tracking-wider text-forest drop-shadow-sm">
+                <Sparkles size={22} className="text-gold shrink-0 animate-pulse-soft" />
+                <span className="font-heading text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wider text-forest drop-shadow-sm">
                   {weddingDay.dateText}
                 </span>
-                <Sparkles size={20} className="text-gold shrink-0 animate-pulse-soft" />
+                <Sparkles size={22} className="text-gold shrink-0 animate-pulse-soft" />
               </motion.div>
             </div>
           </motion.div>
@@ -284,13 +284,13 @@ export default function Ceremonies() {
               >
                 शुभ विवाह
               </motion.h3>
-              <p className="font-heading text-2xl md:text-3xl tracking-[0.2em] font-light">Garima weds Anurag</p>
+              <p className="font-heading text-2xl md:text-3xl tracking-[0.2em] font-bold">Garima weds Anurag</p>
               <div className="flex items-center justify-center gap-3">
                 <div className="w-12 h-[1px] bg-gold/60" />
                 <Heart size={16} className="text-gold" fill="currentColor" />
                 <div className="w-12 h-[1px] bg-gold/60" />
               </div>
-              <p className="font-heading text-lg uppercase tracking-widest opacity-80">Joining Two Souls Into One</p>
+              <p className="font-heading text-lg uppercase tracking-widest font-semibold opacity-95">Joining Two Souls Into One</p>
             </motion.div>
           </div>
 
@@ -313,9 +313,9 @@ export default function Ceremonies() {
             className="max-w-lg mx-auto"
           >
             <div className="text-center mb-10">
-              <h3 className="font-script text-4xl text-gold">Wedding Day Schedule</h3>
-              <div className="inline-block mt-2">
-                <span className="font-heading text-sm font-bold text-forest bg-gold/25 px-4 py-1.5 rounded-full border border-gold/50 tracking-widest uppercase shadow-sm">
+              <h3 className="font-script text-5xl md:text-6xl text-forest font-bold">Wedding Day Schedule</h3>
+              <div className="inline-block mt-3">
+                <span className="font-heading text-base md:text-lg font-extrabold text-forest bg-gold/30 px-6 py-2 rounded-full border border-gold/50 tracking-widest uppercase shadow-sm">
                   26th November 2026
                 </span>
               </div>

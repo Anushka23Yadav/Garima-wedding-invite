@@ -15,6 +15,7 @@ import Ceremonies from '../components/Ceremonies';
 import OurStory from '../components/OurStory';
 import VenueSection from '../components/VenueSection';
 import ClosingSection from '../components/ClosingSection';
+import AutoScrollController from '../components/AutoScrollController';
 import { FloralDivider } from '../components/Icons';
 
 // Floating Petals Component
@@ -136,19 +137,22 @@ export default function Home() {
           {/* Floating Petals throughout */}
           <FloatingPetals />
 
+          {/* Floating Auto-Scroll Controller */}
+          <AutoScrollController isOpened={isOpened} />
+
           {/* Floating Music Control */}
           <motion.button
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 1, type: "spring" }}
             onClick={toggleMusic}
-            className={`fixed bottom-6 right-6 md:bottom-8 md:right-8 z-40 p-4 bg-white/90 backdrop-blur-md rounded-full shadow-2xl border-2 ${isPlaying ? 'border-gold' : 'border-gold/20'} text-gold hover:scale-110 transition-transform active:scale-90 ${isPlaying ? 'sound-btn-playing' : ''}`}
+            className={`fixed bottom-6 right-6 md:bottom-8 md:right-8 z-40 p-4 bg-white/95 backdrop-blur-md rounded-full shadow-2xl border-2 ${isPlaying ? 'border-gold shadow-gold/30' : 'border-gold/30'} text-forest hover:scale-110 transition-transform active:scale-90 ${isPlaying ? 'sound-btn-playing' : ''}`}
             aria-label={isPlaying ? 'Mute music' : 'Unmute music'}
           >
             {isPlaying ? (
-              <Volume2 size={22} className="animate-pulse-soft" />
+              <Volume2 size={22} className="animate-pulse-soft text-gold" />
             ) : (
-              <VolumeX size={22} />
+              <VolumeX size={22} className="text-forest/70" />
             )}
           </motion.button>
 
@@ -166,8 +170,8 @@ export default function Home() {
                   viewport={{ once: true }}
                   className="space-y-4"
                 >
-                  <h2 className="font-script text-4xl md:text-5xl text-gold">Save the Date</h2>
-                  <p className="font-heading text-lg md:text-xl opacity-60 italic">Scratch to unveil our special day</p>
+                  <h2 className="font-script text-5xl sm:text-6xl md:text-7xl text-[#8C651A] font-bold">Save the Date</h2>
+                  <p className="font-heading text-2xl sm:text-3xl md:text-4xl text-forest font-bold italic">Scratch to unveil our special day</p>
                 </motion.div>
 
                 <div className="flex flex-wrap justify-center items-center gap-2.5 sm:gap-4 md:gap-8">
@@ -179,7 +183,7 @@ export default function Home() {
                 <motion.p
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
-                  className="font-script text-2xl md:text-3xl text-forest pt-8"
+                  className="font-script text-3xl sm:text-4xl md:text-5xl text-forest font-bold pt-8"
                 >
                   We can't wait to see you!
                 </motion.p>
@@ -194,8 +198,8 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="space-y-4"
               >
-                <h2 className="font-script text-4xl md:text-5xl text-gold">Time for Togetherness</h2>
-                <p className="font-heading text-lg md:text-xl text-forest/75 italic font-medium">Counting down to 26th November 2026, 12:00 PM</p>
+                <h2 className="font-script text-5xl sm:text-6xl md:text-7xl text-[#8C651A] font-bold">Time for Togetherness</h2>
+                <p className="font-heading text-2xl sm:text-3xl md:text-4xl text-forest font-bold italic">Counting down to 26th November 2026, 12:00 PM</p>
               </motion.div>
               <Countdown />
             </section>
