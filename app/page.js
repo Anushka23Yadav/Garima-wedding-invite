@@ -15,6 +15,7 @@ import Ceremonies from '../components/Ceremonies';
 import OurStory from '../components/OurStory';
 import VenueSection from '../components/VenueSection';
 import ClosingSection from '../components/ClosingSection';
+import FloralBailBorder from '../components/FloralBailBorder';
 import AutoScrollController from '../components/AutoScrollController';
 import { FloralDivider } from '../components/Icons';
 
@@ -60,6 +61,7 @@ const FloatingPetals = () => {
 export default function Home() {
   const [isOpened, setIsOpened] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [allDatesRevealed, setAllDatesRevealed] = useState(false);
   const audioRef = useRef(null);
 
   useEffect(() => {
@@ -134,6 +136,9 @@ export default function Home() {
           transition={{ duration: 1.2 }}
           className="relative pt-4 md:pt-6"
         >
+          {/* Royal Floral Bail Border Frame */}
+          <FloralBailBorder />
+
           {/* Floating Petals throughout */}
           <FloatingPetals />
 
@@ -175,9 +180,22 @@ export default function Home() {
                 </motion.div>
 
                 <div className="flex flex-wrap justify-center items-center gap-2.5 sm:gap-4 md:gap-8">
-                  <ScratchCard revealContent={weddingConfig.dates.scratchDay} />
-                  <ScratchCard revealContent={weddingConfig.dates.scratchMonth} isMonth />
-                  <ScratchCard revealContent={weddingConfig.dates.scratchYear} />
+                  <ScratchCard 
+                    revealContent={weddingConfig.dates.scratchDay} 
+                    forceReveal={allDatesRevealed}
+                    onReveal={() => setAllDatesRevealed(true)}
+                  />
+                  <ScratchCard 
+                    revealContent={weddingConfig.dates.scratchMonth} 
+                    isMonth 
+                    forceReveal={allDatesRevealed}
+                    onReveal={() => setAllDatesRevealed(true)}
+                  />
+                  <ScratchCard 
+                    revealContent={weddingConfig.dates.scratchYear} 
+                    forceReveal={allDatesRevealed}
+                    onReveal={() => setAllDatesRevealed(true)}
+                  />
                 </div>
 
                 <motion.p

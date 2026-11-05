@@ -3,7 +3,7 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import confetti from 'canvas-confetti';
 
-export default function ScratchCard({ revealContent, onReveal, isMonth, className = '' }) {
+export default function ScratchCard({ revealContent, onReveal, isMonth, className = '', forceReveal = false }) {
   const canvasRef = useRef(null);
   const containerRef = useRef(null);
   const [isRevealed, setIsRevealed] = useState(false);
@@ -13,6 +13,8 @@ export default function ScratchCard({ revealContent, onReveal, isMonth, classNam
 
   const strokePointsRef = useRef(0);
   const isRevealingRef = useRef(false);
+  const touchStartTimeRef = useRef(0);
+  const touchMovedRef = useRef(false);
 
   const isLongText = Boolean(isMonth) || (typeof revealContent === 'string' && revealContent.length > 5);
   const isMediumText = typeof revealContent === 'string' && revealContent.length > 2 && revealContent.length <= 5;
@@ -41,6 +43,13 @@ export default function ScratchCard({ revealContent, onReveal, isMonth, classNam
 
     if (onReveal) onReveal();
   }, [isRevealed, onReveal]);
+
+  // Sync with external forceReveal prop (e.g. revealing all 3 date cards simultaneously)
+  useEffect(() => {
+    if (forceReveal && !isRevealed && !isRevealingRef.current) {
+      triggerReveal();
+    }
+  }, [forceReveal, isRevealed, triggerReveal]);
 
   useEffect(() => {
     if (!isMounted) return;
@@ -193,7 +202,10 @@ export default function ScratchCard({ revealContent, onReveal, isMonth, classNam
   return (
     <div 
       ref={containerRef}
-      className={`relative ${className || defaultDimensionClasses} rounded-xl overflow-hidden border-2 border-gold shadow-xl group bg-[#FFFDF9] flex-shrink-0`}
+      onClick={() => {
+        if (!isRevealed) triggerReveal();
+      }}
+      className={`relative ${className || defaultDimensionClasses} rounded-xl overflow-hidden border-2 border-gold shadow-xl group bg-[#FFFDF9] flex-shrink-0 cursor-pointer`}
     >
       {/* Target Revealed Content: Ultra-crisp, high-contrast, perfectly fitted with zero side clipping */}
       <div 
@@ -231,14 +243,21 @@ export default function ScratchCard({ revealContent, onReveal, isMonth, classNam
         onMouseUp={() => setIsDrawing(false)}
         onMouseMove={draw}
         onMouseLeave={() => setIsDrawing(false)}
-        onTouchStart={(e) => {
-          e.preventDefault();
+        onTouchStart={() => {
+          touchStartTimeRef.current = Date.now();
+          touchMovedRef.current = false;
           setIsDrawing(true);
           if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent('wedding-user-interacting'));
         }}
-        onTouchEnd={() => setIsDrawing(false)}
+        onTouchEnd={() => {
+          setIsDrawing(false);
+          const touchDuration = Date.now() - touchStartTimeRef.current;
+          if (!touchMovedRef.current && touchDuration < 400) {
+            triggerReveal();
+          }
+        }}
         onTouchMove={(e) => {
-          e.preventDefault();
+          touchMovedRef.current = true;
           draw(e);
         }}
         onClick={triggerReveal}
