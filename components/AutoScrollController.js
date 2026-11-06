@@ -61,7 +61,7 @@ export default function AutoScrollController({ isOpened }) {
       return;
     }
 
-    const speed = 1.10; // ~87px per second at 60Hz (responsive, smooth glide)
+    const speed = 0.5; // ~87px per second at 60Hz (responsive, smooth glide)
     let lastTime = performance.now();
 
     const loop = (currentTime) => {
