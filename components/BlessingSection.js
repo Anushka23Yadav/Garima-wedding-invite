@@ -96,7 +96,7 @@ export default function BlessingSection() {
             {couple.invitationOpening || "With the divine blessings and the love of our family,"}
           </p>
           <div className="space-y-3 pt-2">
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#8C651A] tracking-wider uppercase">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl !font-black text-[#6D4807] tracking-wider uppercase drop-shadow-xs">
               {couple.invitingFamily || "The Khanka Family"}
             </h2>
             <p className="font-heading text-base sm:text-lg md:text-xl text-forest tracking-[0.18em] uppercase font-bold leading-relaxed max-w-2xl mx-auto">
@@ -157,7 +157,7 @@ export default function BlessingSection() {
             <div className="h-[1px] w-16 bg-gold/30 mx-auto" />
 
             <div className="space-y-1">
-              <p className="font-heading text-xs uppercase tracking-[0.2em] text-gold font-bold">
+              <p className="font-heading text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] text-[#6D4807] !font-black">
                 Beloved Daughter of
               </p>
               <p className="font-heading font-bold text-xl uppercase tracking-tighter text-forest">
@@ -168,7 +168,7 @@ export default function BlessingSection() {
             <div className="h-[1px] w-12 bg-gold/20 mx-auto" />
 
             <div className="space-y-1">
-              <p className="font-heading text-xs uppercase tracking-[0.2em] text-gold font-bold">
+              <p className="font-heading text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] text-[#6D4807] !font-black">
                 Granddaughter of
               </p>
               <p className="font-heading font-semibold text-base md:text-lg text-forest/90">
@@ -179,7 +179,7 @@ export default function BlessingSection() {
             <div className="h-[1px] w-12 bg-gold/20 mx-auto" />
 
             <div className="space-y-1">
-              <p className="font-heading text-xs uppercase tracking-[0.2em] text-gold font-bold">
+              <p className="font-heading text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] text-[#6D4807] !font-black">
                 Maternal Granddaughter of
               </p>
               <p className="font-heading font-semibold text-base md:text-lg text-forest/90">
@@ -190,7 +190,7 @@ export default function BlessingSection() {
             <div className="h-[1px] w-12 bg-gold/20 mx-auto" />
 
             <div className="space-y-1">
-              <p className="font-heading text-xs uppercase tracking-[0.2em] text-gold font-bold">
+              <p className="font-heading text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] text-[#6D4807] !font-black">
                 Beloved Sister of
               </p>
               <p className="font-heading font-semibold text-base md:text-lg text-forest/90">
@@ -211,7 +211,7 @@ export default function BlessingSection() {
             <div className="h-[1px] w-16 bg-gold/30 mx-auto" />
 
             <div className="space-y-1">
-              <p className="font-heading text-xs uppercase tracking-[0.2em] text-gold font-bold">
+              <p className="font-heading text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] text-[#6D4807] !font-black">
                 Grandson of
               </p>
               <p className="font-heading font-semibold text-lg md:text-xl text-forest/90">
@@ -222,7 +222,7 @@ export default function BlessingSection() {
             <div className="h-[1px] w-12 bg-gold/20 mx-auto" />
 
             <div className="space-y-1">
-              <p className="font-heading text-xs uppercase tracking-[0.2em] text-gold font-bold">
+              <p className="font-heading text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] text-[#6D4807] !font-black">
                 Son of
               </p>
               <p className="font-heading font-bold text-xl uppercase tracking-tighter text-forest">

@@ -56,7 +56,7 @@ const EventCard = ({ title, date, time, venue, note, color, bgGradient, image, i
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.3 }}
-        className="font-script text-5xl md:text-6xl text-forest font-bold"
+        className="font-script text-3xl min-[380px]:text-4xl sm:text-5xl md:text-6xl text-forest font-bold leading-[1.45] py-2"
       >
         {title}
       </motion.h2>
@@ -118,10 +118,10 @@ const ScheduleItem = ({ time, event, description, index, isLast }) => (
 
     {/* Content */}
     <div className="pb-8 -mt-1">
-      <p className="font-heading text-base md:text-lg text-[#8C651A] font-extrabold uppercase tracking-wider">{time}</p>
-      <h4 className="font-script text-3xl md:text-4xl text-forest font-bold mt-1">{event}</h4>
+      <p className="font-heading text-lg sm:text-xl md:text-2xl text-[#6D4807] !font-black uppercase tracking-wider">{time}</p>
+      <h4 className="font-heading text-3xl sm:text-4xl md:text-5xl text-forest !font-black tracking-tight mt-1">{event}</h4>
       {description && (
-        <p className="text-forest font-heading text-xl md:text-2xl mt-1.5 max-w-md font-bold leading-snug">{description}</p>
+        <p className="text-forest/90 font-heading text-xl sm:text-2xl md:text-3xl mt-1.5 max-w-lg font-bold leading-snug">{description}</p>
       )}
     </div>
   </motion.div>
@@ -154,7 +154,7 @@ export default function Ceremonies() {
                   {ganeshPuja.title || "Auspicious Beginning"}
                 </p>
               </div>
-              <h2 className="font-script text-6xl md:text-7xl text-[#8C651A] font-bold pt-2">
+              <h2 className="font-script text-3xl min-[380px]:text-4xl sm:text-6xl md:text-7xl text-[#8C651A] font-bold py-2 leading-[1.45] md:leading-normal">
                 {ganeshPuja.heading || "Shri Ganesh Puja"}
               </h2>
               <p className="font-heading text-2xl sm:text-3xl md:text-4xl text-forest font-bold italic">{ganeshPuja.dateText}</p>

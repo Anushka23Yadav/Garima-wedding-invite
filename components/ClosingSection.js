@@ -108,10 +108,6 @@ export default function ClosingSection() {
           <NamasteLogo />
           {/* <p className="font-heading text-lg text-forest/50 italic">{dates.weddingDateText}</p> */}
         </motion.div>
-
-        <div className="pt-16 md:pt-20 text-forest font-heading text-sm sm:text-base tracking-widest font-bold">
-          <p>Handcrafted with ❤️ for {couple.bride.name} & {couple.groom.name} • 2026</p>
-        </div>
       </div>
     </section>
   );

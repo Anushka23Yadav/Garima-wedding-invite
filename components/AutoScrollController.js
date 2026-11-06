@@ -61,7 +61,7 @@ export default function AutoScrollController({ isOpened }) {
       return;
     }
 
-    const speed = 1.45; // ~87px per second at 60Hz (responsive, smooth glide)
+    const speed = 1.10; // ~87px per second at 60Hz (responsive, smooth glide)
     let lastTime = performance.now();
 
     const loop = (currentTime) => {
@@ -175,9 +175,8 @@ export default function AutoScrollController({ isOpened }) {
       onClick={toggleScroll}
       onPointerDown={(e) => e.stopPropagation()}
       onTouchStart={(e) => e.stopPropagation()}
-      className={`fixed bottom-6 left-6 md:bottom-8 md:left-8 z-40 px-3.5 py-2.5 sm:px-4 sm:py-3 bg-white/95 backdrop-blur-md rounded-full shadow-2xl border-2 ${
-        isPlaying ? 'border-gold shadow-gold/30' : 'border-gold/30'
-      } text-forest hover:scale-105 active:scale-95 transition-all flex items-center gap-2 group cursor-pointer`}
+      className={`fixed bottom-6 left-6 md:bottom-8 md:left-8 z-40 px-3.5 py-2.5 sm:px-4 sm:py-3 bg-white/95 backdrop-blur-md rounded-full shadow-2xl border-2 ${isPlaying ? 'border-gold shadow-gold/30' : 'border-gold/30'
+        } text-forest hover:scale-105 active:scale-95 transition-all flex items-center gap-2 group cursor-pointer`}
       aria-label={isPlaying ? 'Pause auto scroll' : 'Start auto scroll'}
       title={isPlaying ? 'Pause auto scroll' : 'Start auto scroll'}
     >
