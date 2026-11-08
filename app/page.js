@@ -68,6 +68,7 @@ export default function Home() {
     // Initialize Howl for background music with strict single-instance management
     const sound = new Howl({
       src: [weddingConfig.assets.audioSong],
+      format: ['m4a', 'aac', 'mp3'],
       loop: true,
       volume: 0.5,
       html5: true,
