@@ -144,7 +144,7 @@ export default function Home() {
           <FloatingPetals />
 
           {/* Floating Auto-Scroll Controller */}
-          <AutoScrollController isOpened={isOpened} />
+          <AutoScrollController isOpened={isOpened} allDatesRevealed={allDatesRevealed} />
 
           {/* Floating Music Control */}
           <motion.button

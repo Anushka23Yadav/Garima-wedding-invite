@@ -41,6 +41,10 @@ export default function ScratchCard({ revealContent, onReveal, isMonth, classNam
       // Fallback if confetti fails
     }
 
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('wedding-scratch-revealed'));
+    }
+
     if (onReveal) onReveal();
   }, [isRevealed, onReveal]);
 
