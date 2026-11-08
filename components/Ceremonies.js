@@ -63,11 +63,15 @@ const EventCard = ({ title, date, time, venue, note, color, bgGradient, image, i
 
       {/* Date & Time */}
       <div className="flex flex-col gap-2 font-heading text-lg">
-        <div className="flex items-center justify-center gap-2">
-          <Clock size={20} className="text-[#8C651A]" />
-          <p className="font-extrabold text-forest text-xl md:text-2xl">{date}</p>
-        </div>
-        <p className="text-forest text-2xl md:text-3xl font-extrabold">{time}</p>
+        {date && (
+          <div className="flex items-center justify-center gap-2">
+            <Clock size={20} className="text-[#8C651A]" />
+            <p className="font-extrabold text-forest text-xl md:text-2xl">{date}</p>
+          </div>
+        )}
+        {time && (
+          <p className="text-forest text-2xl md:text-3xl font-extrabold">{time}</p>
+        )}
       </div>
 
       {/* Note instead of dress code */}

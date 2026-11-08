@@ -5,15 +5,15 @@
     "invitationCall": "cordially invites you to grace the auspicious occasion of the wedding of",
     "bride": {
       "name": "Garima",
-      "parents": "Sw. Pawan Singh Khanka & Mrs. Arti Khanka",
-      "grandparents": "Sw. Gambhir Singh Khanka & Sw. Hema Khanka",
-      "maternalGrandparents": "Mr. Trilok Singh Kanyal & Mrs. Vidya Kanyal",
+      "parents": "Mrs. Arti Khanka & Sw. Pawan Singh Khanka",
+      "grandparents": "Sw. Hema Khanka & Sw. Gambhir Singh Khanka",
+      "maternalGrandparents": "Mrs. Vidya Kanyal & Mr. Trilok Singh Kanyal",
       "sibling": "Mr. Priyansh Singh Khanka"
     },
     "groom": {
       "name": "Anurag",
-      "grandparents": "Sw. Rajkishor Sharma & Sw. Imarti Sharma",
-      "parents": "Mr. Satyaveer Sharma & Mrs. Anita Sharma"
+      "grandparents": "Sw. Imarti Sharma & Sw. Rajkishor Sharma",
+      "parents": "Mrs. Anita Sharma & Mr. Satyaveer Sharma"
     },
     "coupleTitle": "Garima weds Anurag",
     "blessingHeadline": "॥ श्री गणेशाय नमः ॥",
@@ -59,7 +59,6 @@
           "id": "ganesh-puja",
           "title": "Shri Ganesh Puja",
           "date": "20th November 2026",
-          "time": "12:00 PM Onwards",
           "note": "Seeking Lord Ganesha's divine blessings to mark the auspicious beginning of our wedding festivities 🙏✨",
           "venue": "At Residence, Kalyanpur, Lucknow",
           "image": "/assets/ganesh.jpg",
