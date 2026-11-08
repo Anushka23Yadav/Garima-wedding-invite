@@ -47,7 +47,7 @@
   "assets": {
     "ganeshImage": "/assets/ganesh.jpg",
     "audioSong": "/assets/wedding-song.m4a",
-    "ogImage": "/assets/og-image-full1.png"
+    "ogImage": "/assets/og-image-full1.jpg"
   },
   "ceremonies": {
     "ganeshPuja": {
